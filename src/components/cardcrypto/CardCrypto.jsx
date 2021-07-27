@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './CardCrypto.scss';
 
+const getClassToNumber = (number) =>
+  Math.sign(number) === 1
+    ? 'percentage-24h positive'
+    : 'percentage-24h negative';
+
 export const CardCrypto = ({ crypto }) => {
   const [cantidad, setCantidad] = useState({ cantidad: '' });
 
@@ -10,6 +15,7 @@ export const CardCrypto = ({ crypto }) => {
       [e.target.name]: e.target.value,
     });
   };
+
   return (
     <div className='cryptos__wrap-card'>
       <div key={crypto.id} className='cryptos__wrap-card--card'>
@@ -31,8 +37,10 @@ export const CardCrypto = ({ crypto }) => {
           </h4>
           <h4>
             24h %:{' '}
-            <span className='percentage-24h'>
-              {crypto.price_change_percentage_24h} USD
+            <span
+              className={getClassToNumber(crypto.price_change_percentage_24h)}
+            >
+              {crypto.price_change_percentage_24h} %
             </span>
           </h4>
           <label htmlFor='purchase-price'>Cantidad </label>

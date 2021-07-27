@@ -9,6 +9,7 @@ export const DataCrypto = () => {
     if (cryptos.length == 0) {
       getCryptos({ setCryptos });
     }
+
     return;
   };
 

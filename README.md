@@ -1,6 +1,6 @@
 # Prueba-B4E
 
-#### Tiempo de prueba 60 minutos.
+-Tiempo de prueba 60 minutos.
 
 1- Crear una nueva aplicación de ReactJS con el nombre welcome_b4e 
 2- Realice la limpieza del Proyecto dejando solamente el texto Wellcome B4E en un <h1> en el componente App.js 
